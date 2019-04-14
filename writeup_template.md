@@ -18,13 +18,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
+[image1]: ./examples/recovery1.jpg "Recovery Image"
+[image2]: ./examples/recovery2.jpg "Recovery Image"
+[image3]: ./examples/recovery3.jpg "Recovery Image"
+[image4]: ./examples/image.png "Normal Image"
+[image5]: ./examples/flipped.png "Flipped Image"
+[image6]: ./examples/center_lane.png "Center Image"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -126,22 +125,22 @@ Input (160x320x3)
 
 To capture good driving behavior, I first recorded one and half laps on track one using center lane driving. Here is an example image of center lane driving:
 
-![alt text][image2]
+![alt text][image6]
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to come to center of the lane when it get deflected from it. These images show what a recovery looks like starting from left of the lane to the center of the lane:
 
+![alt text][image1]
+![alt text][image2]
 ![alt text][image3]
-![alt text][image4]
-![alt text][image5]
 
 I also recorded the data by driving the vehicle in the opposite direction of the track.
 
 To augment the data set, I also flipped images and angles thinking that this would help the model to make it unbiased. For example, here is an image that has then been flipped:
 
-![alt text][image6]
-![alt text][image7]
+![alt text][image4]
+![alt text][image5]
 
-After the collection process, I had X number of data points. I then preprocessed this data by applying the zero mean normalization, and cropping the part of image which is unrelevent for the training.
+After the collection process, I had 51882 number of data points. I then preprocessed this data by applying the zero mean normalization, and cropping the part of image which is unrelevent for the training.
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
